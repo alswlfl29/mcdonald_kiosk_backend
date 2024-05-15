@@ -1,4 +1,4 @@
-package com.study.kioskbackend.global.common;
+package com.study.kioskbackend.global.common.dto;
 
 import lombok.AllArgsConstructor;
 import lombok.Getter;

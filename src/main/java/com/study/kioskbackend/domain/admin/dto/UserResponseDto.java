@@ -28,7 +28,7 @@ public class UserResponseDto {
                 .userName(user.getUserName())
                 .userRole(user.getUserRole())
                 .userPoint(user.getUserPoint())
-                .userCreateDate(user.getUserCreateDate())
+                .userCreateDate(user.getCreateDate())
                 .build();
     }
 }

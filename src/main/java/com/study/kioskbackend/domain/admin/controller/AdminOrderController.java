@@ -4,7 +4,7 @@ import com.study.kioskbackend.domain.admin.dto.OrderEditRequestDto;
 import com.study.kioskbackend.domain.admin.dto.OrderListResponseDto;
 import com.study.kioskbackend.domain.admin.service.AdminOrderService;
 import com.study.kioskbackend.domain.order.entity.Order;
-import com.study.kioskbackend.global.common.ResponseDto;
+import com.study.kioskbackend.global.common.dto.ResponseDto;
 import lombok.RequiredArgsConstructor;
 import org.springframework.data.domain.Page;
 import org.springframework.web.bind.annotation.*;

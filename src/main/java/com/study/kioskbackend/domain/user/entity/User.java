@@ -2,6 +2,7 @@ package com.study.kioskbackend.domain.user.entity;
 
 import com.study.kioskbackend.domain.admin.dto.UserEditRequestDto;
 import com.study.kioskbackend.domain.user.enumeration.UserRole;
+import com.study.kioskbackend.global.common.entity.BaseEntity;
 import jakarta.persistence.*;
 import lombok.Builder;
 import lombok.Getter;
@@ -21,7 +22,7 @@ import java.util.Set;
 @Getter
 @Setter
 @Builder
-public class User {
+public class User extends BaseEntity {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "user_idx")
@@ -37,24 +38,18 @@ public class User {
     private UserRole userRole;
     @Column(name = "user_point")
     private int userPoint;
-    @Column(name = "user_create_date")
-    private LocalDateTime userCreateDate;
-    @Column(name = "user_update_date", nullable = true)
-    private LocalDateTime userUpdateDate;
     @Column(name = "is_deleted")
     private boolean isDeleted;
 
     @Builder
     public User(Long userIdx, String userId, String userPw, String userName, UserRole userRole, int userPoint,
-                LocalDateTime userCreateDate, LocalDateTime userUpdateDate, boolean isDeleted) {
+                boolean isDeleted) {
         this.userIdx = userIdx;
         this.userId = userId;
         this.userPw = userPw;
         this.userName = userName;
         this.userRole = userRole;
         this.userPoint = userPoint;
-        this.userCreateDate = userCreateDate;
-        this.userUpdateDate = userUpdateDate;
         this.isDeleted = isDeleted;
     }
 
@@ -78,6 +73,5 @@ public class User {
     public void deleteOrder(Long userIdx) {
         this.userIdx = userIdx;
         this.isDeleted = true;
-
     }
 }

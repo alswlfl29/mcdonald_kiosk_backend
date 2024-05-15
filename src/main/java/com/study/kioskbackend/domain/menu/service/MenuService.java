@@ -20,7 +20,7 @@ public class MenuService {
 
     @Transactional(readOnly = true)
     public Page<CategoryMenuResponseDto> getRecommendMenu(int page){
-        Pageable pageable = PageRequest.of(page, 9, Sort.by(Sort.Order.asc("menuCreateDate")));
+        Pageable pageable = PageRequest.of(page, 9, Sort.by(Sort.Order.asc("createDate")));
 
         Page<Menu> menusEntity = menuRepository.findByMenuRecommend(pageable);
 
@@ -31,7 +31,7 @@ public class MenuService {
 
     @Transactional(readOnly = true)
     public Page<CategoryMenuResponseDto> getMenus(Long categoryIdx, int page){
-        Pageable pageable = PageRequest.of(page, 9, Sort.by(Sort.Order.desc("menuCreateDate")));
+        Pageable pageable = PageRequest.of(page, 9, Sort.by(Sort.Order.desc("createDate")));
 
         Page<Menu> menusEntity = menuRepository.findByCategoryIdxAndIsDeleted(categoryIdx, pageable);
         return menusEntity.map((menu) -> new CategoryMenuResponseDto(menu,

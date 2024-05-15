@@ -34,7 +34,7 @@ public class SecurityConfig  {
 
         http     //HTTP요청에 대한 보안설정을 시작한다.
                 .authorizeHttpRequests( (auth) -> auth
-                        .requestMatchers("/api/v1/admin/**").hasRole("ADMIN")
+                        .requestMatchers("/admin/**").hasRole("ADMIN")
                         .anyRequest().permitAll()
                 );
 

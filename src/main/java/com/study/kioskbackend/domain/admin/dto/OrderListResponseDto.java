@@ -20,7 +20,7 @@ public class OrderListResponseDto {
     private int orderCount;
     private int orderNumber;
     private OrderStatus orderStatus;
-    private LocalDateTime orderTime;
+    private LocalDateTime createDate;
 
     public static OrderListResponseDto toDto(Order order){
         return OrderListResponseDto.builder()
@@ -30,7 +30,7 @@ public class OrderListResponseDto {
                 .orderCount(order.getOrderCount())
                 .orderNumber(order.getOrderNumber())
                 .orderStatus(order.getOrderStatus())
-                .orderTime(order.getOrderTime())
+                .createDate(order.getCreateDate())
                 .build();
     }
 

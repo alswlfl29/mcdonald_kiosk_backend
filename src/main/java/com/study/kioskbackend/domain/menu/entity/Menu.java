@@ -1,5 +1,6 @@
 package com.study.kioskbackend.domain.menu.entity;
 
+import com.study.kioskbackend.global.common.entity.BaseEntity;
 import jakarta.persistence.*;
 import lombok.AccessLevel;
 import lombok.Getter;
@@ -11,31 +12,36 @@ import java.time.LocalDateTime;
 @Entity
 @Getter
 @NoArgsConstructor(access = AccessLevel.PROTECTED)
-public class Menu {
+public class Menu extends BaseEntity {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Column(name = "menu_idx")
     private Long menuIdx;
-    @Column(nullable = false)
+
+    @Column(name = "category_idx", nullable = false)
     private Long categoryIdx;
-    @Column(nullable = false)
+
+    @Column(name = "img_idx", nullable = false)
     private Long imgIdx;
-    @Column(nullable = false)
+
+    @Column(name="menu_name", nullable = false)
     private String menuName;
-    @Column(nullable = false)
+
+    @Column(name = "menu_price", nullable = false)
     private int menuPrice;
-    @Column(nullable = false)
+
+    @Column(name = "menu_calory", nullable = false)
     private int menuCalory;
-    @Column(nullable = false, unique = true)
+
+    @Column(name = "menu_code", nullable = false, unique = true)
     private String menuCode;
-    @Column(nullable = false)
+
+    @Column(name="menu_recommend", nullable = false)
     private boolean menuRecommend;
-    @Column(nullable = false)
-    @DateTimeFormat(pattern = "yyyy-MM-dd HH:mm")
-    private LocalDateTime menuCreateDate;
-    @DateTimeFormat(pattern = "yyyy-MM-dd HH:mm")
-    private LocalDateTime menuUpdateDate;
-    @Column(nullable = false)
+
+    @Column(name = "is_deleted")
     private boolean isDeleted;
+
 
     public void update(String menuName, Long categoryIdx, int menuPrice, int menuCalory, boolean menuRecommend){
         this.menuName = menuName;
@@ -43,6 +49,5 @@ public class Menu {
         this.menuPrice = menuPrice;
         this.menuCalory = menuCalory;
         this.menuRecommend = menuRecommend;
-        this.menuUpdateDate = LocalDateTime.now();
     }
 }

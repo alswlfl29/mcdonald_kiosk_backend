@@ -24,7 +24,6 @@ public class OrderRequestDto {
                 .orderCount(totalCount)
                 .orderNumber(orderNumber)
                 .orderStatus(OrderStatus.결제완료)
-                .orderTime(LocalDateTime.now())
                 .isDeleted(false)
                 .build();
     }

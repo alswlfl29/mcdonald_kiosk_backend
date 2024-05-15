@@ -4,7 +4,7 @@ import com.study.kioskbackend.domain.admin.dto.UserEditRequestDto;
 import com.study.kioskbackend.domain.admin.dto.UserResponseDto;
 import com.study.kioskbackend.domain.admin.service.AdminUserService;
 import com.study.kioskbackend.domain.user.entity.User;
-import com.study.kioskbackend.global.common.ResponseDto;
+import com.study.kioskbackend.global.common.dto.ResponseDto;
 import lombok.RequiredArgsConstructor;
 import org.springframework.data.domain.Page;
 import org.springframework.web.bind.annotation.*;

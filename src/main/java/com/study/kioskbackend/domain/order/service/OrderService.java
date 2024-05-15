@@ -7,7 +7,7 @@ import com.study.kioskbackend.domain.order.repository.OrderRepository;
 import com.study.kioskbackend.domain.user.entity.PrincipalDetails;
 import com.study.kioskbackend.domain.user.entity.User;
 import com.study.kioskbackend.domain.user.repository.UserRepository;
-import com.study.kioskbackend.global.common.ResponseDto;
+import com.study.kioskbackend.global.common.dto.ResponseDto;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;

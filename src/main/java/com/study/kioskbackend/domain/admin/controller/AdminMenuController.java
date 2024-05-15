@@ -6,7 +6,7 @@ import com.study.kioskbackend.domain.admin.dto.CategoryResponseDto;
 import com.study.kioskbackend.domain.admin.dto.MenuUpdateRequestDto;
 import com.study.kioskbackend.domain.admin.service.AdminMenuService;
 import com.study.kioskbackend.domain.menu.entity.Menu;
-import com.study.kioskbackend.global.common.ResponseDto;
+import com.study.kioskbackend.global.common.dto.ResponseDto;
 import lombok.RequiredArgsConstructor;
 
 import org.springframework.data.domain.Page;
@@ -21,7 +21,7 @@ import java.util.UUID;
 
 @RestController
 @RequiredArgsConstructor
-@RequestMapping("/api/v1/admin")
+@RequestMapping("/admin")
 public class AdminMenuController {
     private final AdminMenuService adminMenuService;
 

@@ -11,8 +11,8 @@ CREATE TABLE `user` (
 	`user_name` varchar(255) NOT NULL,
 	`user_role` enum('ROLE_USER', 'ROLE_ADMIN') NOT NULL	DEFAULT 'ROLE_USER',
 	`user_point` int	NOT NULL DEFAULT 0,
-	`user_create_date`	datetime	NOT NULL	DEFAULT now(),
-	`user_update_date`	datetime	NULL,
+	`create_date`	datetime	NOT NULL	DEFAULT now(),
+	`update_date`	datetime	NULL,
 	`is_deleted`	boolean	NOT NULL	DEFAULT 0
 );
 
@@ -143,8 +143,8 @@ CREATE TABLE `menu` (
 	`menu_calory`	int	NOT NULL,
 	`menu_code`	varchar(255)	NOT NULL	unique,
 	`menu_recommend`	boolean	NOT NULL,
-	`menu_create_date`	datetime	NOT NULL	DEFAULT now(),
-	`menu_update_date`	datetime	NULL,
+	`create_date`	datetime	NOT NULL	DEFAULT now(),
+	`update_date`	datetime	NULL,
 	`is_deleted`	boolean	NOT NULL DEFAULT 0,
 	foreign key (category_idx) references category(category_idx)
 	on update CASCADE,
@@ -235,8 +235,8 @@ CREATE TABLE `order_menu` (
 	`order_count`	int	NOT NULL,
 	`order_number`	int	NOT NULL	DEFAULT 1,
 	`order_status`	enum('결제완료', '결제중')	NOT NULL	DEFAULT '결제완료',
-	`order_time`	datetime	NOT NULL	DEFAULT now(),
-	`order_update_date`	datetime	NULL,
+	`create_date`	datetime	NOT NULL	DEFAULT now(),
+	`update_date`	datetime	NULL,
 	`is_deleted`	boolean	NOT NULL	DEFAULT 0
 );
 
@@ -251,3 +251,4 @@ DROP TABLE `order_menu` CASCADE;
 DROP TABLE `menu` CASCADE;
 DROP TABLE `category` CASCADE;
 DROP TABLE `image` CASCADE;
+DROP TABLE `user` CASCADE;

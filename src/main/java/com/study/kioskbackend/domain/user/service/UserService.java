@@ -4,12 +4,9 @@ import com.study.kioskbackend.domain.user.dto.JoinRequestDto;
 import com.study.kioskbackend.domain.user.entity.User;
 import com.study.kioskbackend.domain.user.enumeration.UserRole;
 import com.study.kioskbackend.domain.user.repository.UserRepository;
-import com.study.kioskbackend.global.common.ResponseDto;
+import com.study.kioskbackend.global.common.dto.ResponseDto;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.authentication.BadCredentialsException;
-import org.springframework.security.core.authority.AuthorityUtils;
-import org.springframework.security.core.userdetails.UserDetails;
-import org.springframework.security.core.userdetails.UserDetailsService;
 import org.springframework.security.core.userdetails.UsernameNotFoundException;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
@@ -46,8 +43,6 @@ public class UserService {
                 .userName(request.getUserName())
                 .userRole(UserRole.ROLE_USER)
                 .userPoint(0)
-                .userCreateDate(LocalDateTime.now())
-                .userUpdateDate(null)
                 .isDeleted(false)
                 .build();
 

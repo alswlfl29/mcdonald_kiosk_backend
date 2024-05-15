@@ -5,7 +5,7 @@ import com.study.kioskbackend.domain.user.dto.LoginRequestDto;
 import com.study.kioskbackend.domain.user.dto.UserDataDto;
 import com.study.kioskbackend.domain.user.entity.User;
 import com.study.kioskbackend.domain.user.service.UserService;
-import com.study.kioskbackend.global.common.ResponseDto;
+import com.study.kioskbackend.global.common.dto.ResponseDto;
 import com.study.kioskbackend.global.config.JwtUtil;
 import jakarta.validation.Valid;
 import lombok.RequiredArgsConstructor;
@@ -15,7 +15,6 @@ import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.web.bind.annotation.*;
 
 @RestController
-@RequestMapping("/api/v1")
 @RequiredArgsConstructor
 public class UserController {
     private final UserService userService;

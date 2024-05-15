@@ -30,12 +30,12 @@ public class AdminMenuService {
     @Transactional(readOnly = true)
     public List<CategoryResponseDto> findAllCategory(){
         List<Category> categories = categoryRepository.findAll();
-        return categories.stream().map(CategoryResponseDto::new).collect(Collectors.toList());
+        return categories.stream().map(CategoryResponseDto::new).toList();
     }
 
     @Transactional(readOnly = true)
     public Page<MenuResponseDto> findByCategoryMenus(Long categoryIdx, int page){
-        Pageable pageable = PageRequest.of(page, 5, Sort.by(Sort.Order.desc("menuCreateDate")));
+        Pageable pageable = PageRequest.of(page, 5, Sort.by(Sort.Order.desc("createDate")));
 
         Page<Menu> menusEntity = menuRepository.findByCategoryIdxAndIsDeleted(categoryIdx, pageable);
 

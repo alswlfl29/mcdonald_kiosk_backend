@@ -16,6 +16,6 @@ public interface OrderRepository extends JpaRepository<Order,Long> {
     @Query("SELECT o FROM Order o WHERE o.isDeleted = false")
     Page<Order> findAllOrderList(Pageable pageable);
 
-    @Query(value = "SELECT o FROM Order o WHERE DATE(o.orderTime) = :orderTime ORDER BY o.orderNumber DESC limit 1")
-    Optional<Order> findLatestOrderNumberByOrderTime(@Param("orderTime") LocalDate orderTime);
+    @Query(value = "SELECT o FROM Order o WHERE DATE(o.createDate) = :createDate ORDER BY o.orderNumber DESC limit 1")
+    Optional<Order> findLatestOrderNumberByOrderTime(@Param("createDate") LocalDate createDate);
 }
